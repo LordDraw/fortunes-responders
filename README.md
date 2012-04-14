@@ -1,2 +1,1 @@
-# Responders
 # Fortunes with Responders
