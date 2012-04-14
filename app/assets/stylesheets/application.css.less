@@ -1,0 +1,44 @@
+@import "twitter/bootstrap";
+
+@baseFontSize: 18px;
+@baseLineHeight: 24px;
+
+@navbarBackgroundHighlight: #384040;
+@navbarBackground: darken(#384040, 20%);
+@navbarText: @white;
+@navbarLinkColor: darken(@white, 20%);
+
+.navbar {
+  .brand {
+     color: @white;
+     font-size: 24px;
+  }
+}
+
+body {
+  padding-top: 60px;
+}
+
+// index.html.erb
+
+article {
+  &.index {
+    margin-bottom: 1em; }
+  .attribute {
+    .makeRow();
+    margin-bottom: .25em;
+   .name {
+      color: @blueDark;
+      .makeColumn(2);
+      text-align: right;
+      &:after {
+        content: ":"; }
+    }
+    .value {
+      .makeColumn(10); } }
+}
+
+
+input, textarea {
+    width: 100%;
+}
