@@ -3,7 +3,9 @@ class FortunesController < ApplicationController
   # GET /fortunes.xml
   def index
     # @fortunes = Fortune.all
-    @fortunes = Fortune.search(params[:search]).page(params[:page]).per_page(4).order('created_at DESC')
+    @fortunes = Fortune.text_search(params[:query])
+      .page(params[:page]).per_page(4)
+
     respond_with(@fortunes)
   end
 

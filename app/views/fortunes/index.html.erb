@@ -1,7 +1,7 @@
 <% title "All fortunes" %>
 
 <%= form_tag fortunes_path, method: :get, id: "fortunes_search", class: "form-inline" do %>
-  <%= text_field_tag :search, params[:search] %>
+  <%= text_field_tag :query, params[:query] %>
   <%= submit_tag "Search", name: nil, class: "btn" %>
 <% end %>
 

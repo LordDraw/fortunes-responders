@@ -4,7 +4,7 @@ class CreateFortunes < ActiveRecord::Migration
       t.text :quotation
       t.string :source
 
-      t.timestamps
+      # t.timestamps
     end
   end
 end

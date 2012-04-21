@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.2.3'
 
@@ -9,6 +9,9 @@ gem 'thin', :group => :development
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'pg'
+gem 'texticle', require: 'texticle/rails'
+gem 'pg_search'
 
 gem 'responders'
 gem 'will_paginate'
@@ -48,3 +51,6 @@ gem "less-rails-bootstrap"
 gem "simple_form"
 gem "wirble", :group => :development
 gem "hirb", :group => :development
+
+gem 'valkyrie', :group => :development
+gem 'taps', :group => :development
