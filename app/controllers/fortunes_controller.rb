@@ -4,7 +4,8 @@ class FortunesController < ApplicationController
   # GET /fortunes
   # GET /fortunes.xml
   def index
-    @fortunes = Fortune.all
+    # @fortunes = Fortune.all
+    @fortunes = Fortune.page(params[:page]).per_page(4).order('created_at DESC')
     respond_with(@fortunes)
   end
 

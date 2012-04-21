@@ -1,5 +1,12 @@
 <% title "All fortunes" %>
 
+<div class="digg_pagination">
+  <div class="page_info">
+    <%= page_entries_info @fortunes %>
+  </div>
+  <%= will_paginate @fortunes, :container => false %>
+</div>
+
 <% @fortunes.each do |fortune| %>
 <article class="index">
   <div class="attribute">
