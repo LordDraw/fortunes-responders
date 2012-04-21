@@ -1,11 +1,9 @@
 class FortunesController < ApplicationController
-  respond_to :html, :json
-
   # GET /fortunes
   # GET /fortunes.xml
   def index
     # @fortunes = Fortune.all
-    @fortunes = Fortune.page(params[:page]).per_page(4).order('created_at DESC')
+    @fortunes = Fortune.search(params[:search]).page(params[:page]).per_page(4).order('created_at DESC')
     respond_with(@fortunes)
   end
 

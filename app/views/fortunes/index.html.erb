@@ -1,5 +1,10 @@
 <% title "All fortunes" %>
 
+<%= form_tag fortunes_path, method: :get, id: "fortunes_search", class: "form-inline" do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", name: nil, class: "btn" %>
+<% end %>
+
 <div class="digg_pagination">
   <div class="page_info">
     <%= page_entries_info @fortunes %>
@@ -7,23 +12,7 @@
   <%= will_paginate @fortunes, :container => false %>
 </div>
 
-<% @fortunes.each do |fortune| %>
-<article class="index">
-  <div class="attribute">
-    <span class="name"><%= t "simple_form.labels.fortune.quotation" %></span>
-    <span class="value"><%= fortune.quotation %></span>
-  </div>
-  <div class="attribute">
-    <span class="name"><%= t "simple_form.labels.fortune.source" %></span>
-    <span class="value"><%= fortune.source %></span>
-  </div>
-<div class="form-actions">
-  <%= link_to 'Show', fortune, class: 'btn btn-mini'%>
-  <%= link_to 'Edit', edit_fortune_path(fortune), class: 'btn btn-mini'%>
-  <%= link_to 'Destroy', fortune, confirm: 'Are you sure?', method: :delete, class: 'btn btn-mini btn-danger'%>
-</div>
-</article>
-<% end %>
+<%= render partial: 'fortune', collection: @fortunes %>
 
 <div class="form-actions">
   <%= link_to 'New Fortune', new_fortune_path, class: 'btn btn-primary'%>
