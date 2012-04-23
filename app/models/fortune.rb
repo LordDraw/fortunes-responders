@@ -9,6 +9,9 @@ class Fortune < ActiveRecord::Base
 
   validates :source, length: { in: 3..64 }, allow_blank: true
 
+  acts_as_taggable_on :tags
+  ActsAsTaggableOn::TagList.delimiter = " "
+
   # def self.text_search(query)
   #   if query.present?
   #     # SQLite i PostgreSQL
@@ -59,13 +62,13 @@ class Fortune < ActiveRecord::Base
   include PgSearch
 
   # definiujemy metodę `search`
-  pg_search_scope :search,
+  pg_search_scope :fortunes_search,
       against: [:quotation, :source],
       using: {tsearch: {dictionary: "english"}}
 
   def self.text_search(query)
     if query.present?
-      search(query)    # metoda zdefiniowana powyżej
+      fortunes_search(query)    # metoda zdefiniowana powyżej
     else
       scoped
     end

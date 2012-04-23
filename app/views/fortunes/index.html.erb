@@ -1,5 +1,11 @@
 <% title "All fortunes" %>
 
+<div id="tag-cloud">
+  <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+  <%= link_to tag.name, tags_fortunes_path(name: tag.name), :class => css_class %>
+  <% end %>
+</div>
+
 <%= form_tag fortunes_path, method: :get, id: "fortunes_search", class: "form-inline" do %>
   <%= text_field_tag :query, params[:query] %>
   <%= submit_tag "Search", name: nil, class: "btn" %>

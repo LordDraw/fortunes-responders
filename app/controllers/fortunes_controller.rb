@@ -1,4 +1,17 @@
 class FortunesController < ApplicationController
+
+  before_filter :only => [:index, :tags] do
+    @tags = Fortune.tag_counts
+  end
+
+  def tags
+    @fortunes = Fortune.tagged_with(params[:name])
+      .page(params[:page]).per_page(4)
+    respond_with(@fortunes) do |format|
+      format.html { render action: 'index' }
+    end
+  end
+
   # GET /fortunes
   # GET /fortunes.xml
   def index
