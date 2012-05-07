@@ -1,6 +1,6 @@
 class FortunesController < ApplicationController
 
-  before_filter :only => [:index, :tags] do
+  before_filter only: [:index, :tags] do
     @tags = Fortune.tag_counts
   end
 

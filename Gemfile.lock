@@ -173,7 +173,7 @@ DEPENDENCIES
   simple_form
   sqlite3
   taps
-  texticle
+  texticle (~> 2.0)
   thin
   uglifier (>= 1.0.3)
   valkyrie

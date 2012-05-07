@@ -10,7 +10,8 @@ gem 'thin', :group => :development
 
 gem 'sqlite3'
 gem 'pg'
-gem 'texticle', require: 'texticle/rails'
+
+gem 'texticle', '~> 2.0', require: 'texticle/rails'
 gem 'pg_search'
 
 gem 'responders'
