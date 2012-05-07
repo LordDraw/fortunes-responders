@@ -1,4 +1,13 @@
 FortuneResponders::Application.routes.draw do
+  #resources :comments
+
+  resources :fortunes do
+    resources :comments
+    collection do
+      get :tags
+    end
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -12,11 +21,11 @@ FortuneResponders::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
 
-  resources :fortunes do
-    collection do
-      get :tags
-    end
-  end
+  # resources :fortunes do
+  #   collection do
+  #     get :tags
+  #   end
+  # end
 
   # Sample resource route with options:
   #   resources :products do

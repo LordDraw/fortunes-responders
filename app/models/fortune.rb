@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 class Fortune < ActiveRecord::Base
+  has_many :comments, :dependent => :destroy
+
   attr_accessible :quotation, :source
 
   validates :quotation, presence: true
