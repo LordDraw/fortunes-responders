@@ -57,3 +57,5 @@ gem 'valkyrie', :group => :development
 gem 'taps', :group => :development
 
 gem 'acts-as-taggable-on', '~> 2.2.2'
+
+gem 'sextant' # find your routes: /rails/routes
