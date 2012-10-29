@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.8'
 
 gem 'quiet_assets', :group => :development
 gem 'thin', :group => :development
@@ -59,3 +59,5 @@ gem 'taps', :group => :development
 gem 'acts-as-taggable-on', '~> 2.2.2'
 
 gem 'sextant' # find your routes: /rails/routes
+
+gem 'therubyracer', '~> 0.10.2'
